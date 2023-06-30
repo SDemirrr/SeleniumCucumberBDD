@@ -9,9 +9,9 @@ import pages.AmazonPage;
 import utilities.ConfigReader;
 import utilities.Driver;
 
-public class AmazonStepDef {
+public class AmazonStepDefinition {
     AmazonPage amazonPage=new AmazonPage();
-    @Given("Kullanici amazon safasina gider")
+    @Given("Kullanici amazon sayfasina gider")
     public void kullaniciAmazonSafasinaGider() {
         Driver.getDriver().get(ConfigReader.getProperty("amznUrl"));
     }
@@ -32,4 +32,17 @@ public class AmazonStepDef {
     public void sayfayiKapatir() {
         Driver.closeDriver();
     }
+    @Then("Kullanici iphone icin arama yapar")
+    public void kullaniciIphoneIcinAramaYapar() {
+        amazonPage.aramaKutusu.sendKeys("iphone"+ Keys.ENTER);
+    }
+
+    @And("Sonuclarin iphone icerdigini test eder")
+    public void sonuclarinIphoneIcerdiginiTestEder() {
+        String expectedData="iphone";
+        String actualData=amazonPage.aramaSonucWE.getText();
+        Assert.assertTrue(actualData.contains(expectedData));
+    }
+
+
 }

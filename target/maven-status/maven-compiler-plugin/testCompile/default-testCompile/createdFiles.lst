@@ -1,1 +1,2 @@
-stepDefinitions\AmazonStepDef.class
+runners\Runner.class
+stepDefinitions\AmazonStepDefinition.class
