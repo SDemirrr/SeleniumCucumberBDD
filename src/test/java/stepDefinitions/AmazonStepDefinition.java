@@ -45,4 +45,16 @@ public class AmazonStepDefinition {
     }
 
 
+    @Then("Kullanici laptop icin arama yapar")
+    public void kullaniciLaptopIcinAramaYapar() {
+        amazonPage.aramaKutusu.sendKeys("laptop"+ Keys.ENTER);
+
+    }
+
+    @And("Sonuclarin laptop icerdigini test eder")
+    public void sonuclarinLaptopIcerdiginiTestEder() {
+        String expectedData="laptop";
+        String actualData=amazonPage.aramaSonucWE.getText();
+        Assert.assertTrue(actualData.contains(expectedData));
+    }
 }

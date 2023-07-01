@@ -1,5 +1,7 @@
+@all
 Feature: Amazon Search
-  @gp1
+
+  @grup1
   Scenario: TC01 Kullanici amazonda nutella aratir
 
     Given Kullanici amazon sayfasina gider
@@ -7,7 +9,7 @@ Feature: Amazon Search
     And   Sonuclarin Nutella icerdigini test eder
     And   Sayfayi kapatir
 
-   @gp2
+   @grup2
   Scenario: TC03 Kullanici amazonda iphone aratir
 
     Given Kullanici amazon sayfasina gider
