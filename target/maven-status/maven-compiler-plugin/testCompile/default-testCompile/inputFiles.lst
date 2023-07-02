@@ -2,4 +2,7 @@ C:\com.Batch81Cucumber\src\test\java\utilities\Driver.java
 C:\com.Batch81Cucumber\src\test\java\utilities\ConfigReader.java
 C:\com.Batch81Cucumber\src\test\java\runners\Runner.java
 C:\com.Batch81Cucumber\src\test\java\pages\AmazonPage.java
+C:\com.Batch81Cucumber\src\test\java\pages\BrcPage.java
+C:\com.Batch81Cucumber\src\test\java\stepDefinitions\HepsiBuradaStepDefinitions.java
 C:\com.Batch81Cucumber\src\test\java\stepDefinitions\AmazonStepDefinition.java
+C:\com.Batch81Cucumber\src\test\java\stepDefinitions\BlueRentaCar.java

@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/resources/features",
         glue = "stepDefinitions",
-        tags = "@BackGroundTumTestleriCalistir",
+        tags = "@all",
         //iki tagi ayni anda calistirmak istersek "@tag1 or @tag2"
         dryRun = false
 )
