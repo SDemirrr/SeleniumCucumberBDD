@@ -4,6 +4,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.cucumber.java.tr.Ama;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import pages.AmazonPage;
@@ -94,4 +95,15 @@ public class AmazonStepDefinition {
     }
 
 
+    @And("Kullanici sonuclarin {string} icerdigini test eder")
+    public void kullaniciSonuclarinIcerdiginiTestEder(String istenenKelime) {
+        AmazonPage amazonPage=new AmazonPage();
+        Assert.assertTrue(amazonPage.aramaSonucWE.getText().contains(istenenKelime));
+    }
+
+
+    @And("sayfayyi kapat")
+    public void sayfayyiKapat() {
+        Driver.quitDriver();
+    }
 }

@@ -12,11 +12,6 @@ import utilities.Driver;
 
 public class BlueRentaCar {
     BrcPage brcPage=new BrcPage();
-    @Given("kullanici Blue RentaCar ana sayfasinda")
-    public void kullaniciBlueRentaCarAnaSayfasinda() {
-        Driver.getDriver().get(ConfigReader.getProperty("brcUrl"));
-
-    }
 
 
     @Then("Log in yazisina tiklar")
@@ -47,9 +42,15 @@ public class BlueRentaCar {
         Assert.assertTrue(brcPage.login2.isDisplayed());
     }
 
-    @And("kulllanici sayfayi kapatir")
-    public void kulllaniciSayfayiKapatir() {
-        Driver.closeDriver();
+
+    @Given("kullanici {string} ana sayfasinda")
+    public void kullaniciAnaSayfasinda(String gidilecekSayfa) {
+        Driver.getDriver().get(ConfigReader.getProperty(gidilecekSayfa));
+    }
+
+    @And("Kullanici sayfayi kapatir")
+    public void kullaniciSayfayiKapatir() {
+        Driver.quitDriver();
     }
 }
 
