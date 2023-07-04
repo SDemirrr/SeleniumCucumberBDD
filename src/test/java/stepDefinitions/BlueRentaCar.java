@@ -9,6 +9,7 @@ import org.openqa.selenium.interactions.Actions;
 import pages.BrcPage;
 import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.ReusableMethods;
 
 public class BlueRentaCar {
     BrcPage brcPage=new BrcPage();
@@ -51,6 +52,19 @@ public class BlueRentaCar {
     @And("Kullanici sayfayi kapatir")
     public void kullaniciSayfayiKapatir() {
         Driver.quitDriver();
+
+    }
+
+
+    @And("Gecersiz {string} girer")
+    public void gecersizGirer(String gecersizUsername) {
+        brcPage.email.sendKeys(gecersizUsername);
+    }
+
+
+    @And("gecersizz {string} girer")
+    public void gecersizzGirer(String gecersizPassword) {
+        brcPage.password.sendKeys(gecersizPassword);
     }
 }
 

@@ -102,8 +102,5 @@ public class AmazonStepDefinition {
     }
 
 
-    @And("sayfayyi kapat")
-    public void sayfayyiKapat() {
-        Driver.quitDriver();
-    }
+
 }

@@ -1,5 +1,7 @@
 stepDefinitions\AmazonStepDefinition.class
 runners\Runner.class
+utilities\ReusableMethods$1.class
 pages\BrcPage.class
 stepDefinitions\BlueRentaCar.class
 stepDefinitions\HepsiBuradaStepDefinitions.class
+utilities\ReusableMethods.class
