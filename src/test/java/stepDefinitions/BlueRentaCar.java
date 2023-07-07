@@ -11,6 +11,9 @@ import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class BlueRentaCar {
     BrcPage brcPage=new BrcPage();
 
@@ -66,5 +69,11 @@ public class BlueRentaCar {
     public void gecersizzGirer(String gecersizPassword) {
         brcPage.password.sendKeys(gecersizPassword);
     }
+
+
+
+
+
+
 }
 

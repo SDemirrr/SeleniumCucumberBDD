@@ -1,7 +1,11 @@
 stepDefinitions\AmazonStepDefinition.class
-runners\Runner.class
 utilities\ReusableMethods$1.class
 pages\BrcPage.class
-stepDefinitions\BlueRentaCar.class
 stepDefinitions\HepsiBuradaStepDefinitions.class
+pages\HerokuappPage.class
 utilities\ReusableMethods.class
+runners\Runner.class
+stepDefinitions\HerokuStepDefinitons.class
+stepDefinitions\DataTableDefinitons.class
+pages\DataTablesPage.class
+stepDefinitions\BlueRentaCar.class
