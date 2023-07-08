@@ -6,9 +6,10 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
+        plugin = {"html:target/cucumber-reports.html"},
         features = "src/test/resources/features",
         glue = "stepDefinitions",
-        tags = "@PracticeTC07",
+        tags = "@US004All",
         //iki tagi ayni anda calistirmak istersek "@tag1 or @tag2"
         dryRun = false
 )

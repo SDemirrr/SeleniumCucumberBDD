@@ -1,3 +1,5 @@
+
+@US004All
 Feature: US004 Parametre Kullanimi
 
   Scenario: Parametre Kullanimi
