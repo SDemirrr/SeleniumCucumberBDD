@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
         plugin = {"html:target/cucumber-reports.html"},
         features = "src/test/resources/features",
         glue = "stepDefinitions",
-        tags = "@US004All",
+        tags = "@US013All",
         //iki tagi ayni anda calistirmak istersek "@tag1 or @tag2"
         dryRun = false
 )
