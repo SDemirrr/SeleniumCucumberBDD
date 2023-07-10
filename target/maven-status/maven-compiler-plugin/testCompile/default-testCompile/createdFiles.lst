@@ -1,3 +1,5 @@
+pages\AmazonPracticePage.class
+stepDefinitions\AmazonPracticeStepDefinitions.class
 stepDefinitions\AmazonStepDefinition.class
 utilities\ReusableMethods$1.class
 pages\GuruPage.class

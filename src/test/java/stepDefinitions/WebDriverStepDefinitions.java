@@ -13,10 +13,14 @@ import java.util.ArrayList;
 public class WebDriverStepDefinitions {
     Actions actions=new Actions(Driver.getDriver());
     WebDriverPage webDriverPage=new WebDriverPage();
-    ArrayList<String> windows=new ArrayList<>(Driver.getDriver().getWindowHandles());
+    ArrayList<String> windows;
+    String ilkWindow;
+
     @Then("kullanici login Portala kadar asagi iner")
     public void kullaniciLoginPortalaKadarAsagiIner() {
+        ilkWindow=Driver.getDriver().getCurrentUrl();
         actions.sendKeys(Keys.PAGE_DOWN).perform();
+
     }
 
     @And("kullanici Login Portala tiklar")
@@ -26,6 +30,7 @@ public class WebDriverStepDefinitions {
 
     @And("kullanici diger windowa gecer")
     public void kullaniciDigerWindowaGecer() {
+        windows=new ArrayList<>(Driver.getDriver().getWindowHandles());
         Driver.getDriver().switchTo().window(windows.get(1));
     }
 
@@ -35,7 +40,7 @@ public class WebDriverStepDefinitions {
     }
     @And("kullanici {string} bolumune bilgileri girer")
     public void kullaniciBolumuneBilgileriGirer(String password) {
-        webDriverPage.password.sendKeys(password);
+        actions.sendKeys(Keys.TAB).sendKeys(password).perform();
     }
 
     @And("kullanici login butonuna basar")
@@ -58,11 +63,19 @@ public class WebDriverStepDefinitions {
 
     @And("kullanici ilk sayfaya geri doner")
     public void kullaniciIlkSayfayaGeriDoner() {
+        Driver.getDriver().switchTo().window(windows.get(0));
     }
 
     @And("kullanici ilk sayfaya donuldugunu test eder")
     public void kullaniciIlkSayfayaDonuldugunuTestEder() {
+        String actualIlkSayfaUrl=Driver.getDriver().getCurrentUrl();
+        Assert.assertEquals(actualIlkSayfaUrl,ilkWindow);
+
     }
 
 
+    @And("Tum sayfalari kapatir")
+    public void tumSayfalariKapatir() {
+        Driver.quitDriver();
+    }
 }
