@@ -6,11 +6,13 @@ stepDefinitions\HepsiBuradaStepDefinitions.class
 stepDefinitions\Practice_TC_07stepDefinitions.class
 pages\HerokuappPage.class
 utilities\ReusableMethods.class
+pages\WebDriverPage.class
 pages\AmazonPage.class
 pages\PracticeTC07Page.class
 runners\Runner.class
 stepDefinitions\HerokuStepDefinitons.class
 utilities\Driver.class
+stepDefinitions\WebDriverStepDefinitions.class
 stepDefinitions\DataTableDefinitons.class
 stepDefinitions\Hooks.class
 pages\DataTablesPage.class

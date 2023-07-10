@@ -1,7 +1,7 @@
 
-@US004All
-Feature: US004 Parametre Kullanimi
 
+Feature: US004 Parametre Kullanimi
+  @US004
   Scenario: Parametre Kullanimi
   Scenario:TC02 Parametre kullaniminda configReaderKullanimi
     Given Kullanici "https://www.trendyol.com" sayfasina gitsin

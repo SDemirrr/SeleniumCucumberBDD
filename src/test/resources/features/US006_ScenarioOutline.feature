@@ -1,5 +1,5 @@
 Feature: US006 Kullanici amazonda istedigi kelimeleri aratir
-
+ @us006
   Scenario Outline:TC01 kullanici istedigi kelimeleri aratir
     Given Kullanici amazon sayfasina gider
     Then  Kullanici "<istenenKelime>" icin arama yapar
