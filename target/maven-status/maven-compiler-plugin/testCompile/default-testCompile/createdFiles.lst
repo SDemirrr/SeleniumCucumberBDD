@@ -16,7 +16,6 @@ stepDefinitions\HerokuStepDefinitons.class
 utilities\Driver.class
 stepDefinitions\WebDriverStepDefinitions.class
 stepDefinitions\DataTableDefinitons.class
-stepDefinitions\Hooks.class
 pages\DataTablesPage.class
 utilities\ConfigReader.class
 stepDefinitions\BlueRentaCar.class

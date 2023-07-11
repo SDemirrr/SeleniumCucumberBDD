@@ -25,3 +25,4 @@ Feature: Amazon Practice
     And   Create your account butonuna tiklar
     And   Kullanici 3 saniye bekler
     And   Create account metnini dogrular
+    And   Sayfayi kapatir
