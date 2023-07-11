@@ -5,7 +5,6 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 import pages.AmazonPracticePage;
 import utilities.Driver;
@@ -13,7 +12,7 @@ import utilities.ReusableMethods;
 
 import java.io.IOException;
 
-public class AmazonPracticeStepDefinitions {
+public class PracticeAmazonStepDefinitions {
     AmazonPracticePage amazonPracticePage=new AmazonPracticePage();
     Actions actions=new Actions(Driver.getDriver());
     Faker faker=new Faker();
