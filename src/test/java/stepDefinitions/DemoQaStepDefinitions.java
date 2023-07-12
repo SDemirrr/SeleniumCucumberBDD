@@ -5,9 +5,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -16,10 +14,10 @@ import utilities.Driver;
 
 import java.time.Duration;
 
-public class demoQaStepDefinitions {
+public class DemoQaStepDefinitions {
     DemoQaPages demoQaPages=new DemoQaPages();
     Actions actions=new Actions(Driver.getDriver());
-
+   WebDriverWait wait=new WebDriverWait(Driver.getDriver(),Duration.ofSeconds(20));
     @Given("kullanici Alerts buttonuna tiklar")
     public void kullaniciAlertsButtonunaTiklar() {
         actions.sendKeys(Keys.PAGE_DOWN).perform();
@@ -33,8 +31,7 @@ public class demoQaStepDefinitions {
 
     @Then("kullanici Allert’in gorunur olmasini bekler")
     public void kullaniciAllertInGorunurOlmasiniBekler() {
-        WebDriverWait wait=
-                new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(20));
+
                 wait.until(ExpectedConditions.alertIsPresent());
     }
 
@@ -49,5 +46,26 @@ public class demoQaStepDefinitions {
     @And("kullanici Ok diyerek alerti kapatir")
     public void kullanicOkDiyerekAlertiKapatir() {
         Driver.getDriver().switchTo().alert().accept();
+    }
+
+    @When("kullanici Will enable bes seconds butonunun enable olmasini bekler")
+    public void kullaniciWillEnableBesSecondsButonununEnableOlmasiniBekler() {
+        wait.until(ExpectedConditions.elementToBeClickable(demoQaPages.willEnable));
+        
+    }
+
+    @Then("kullanici Will enable bes seconds butonunun enable oldugunu test eder")
+    public void kullaniciWillEnableBesSecondsButonununEnableOldugunuTestEder() {
+        Assert.assertTrue(demoQaPages.willEnable.isEnabled());
+    }
+
+    @When("kullanici Visible After bes seconds butonunun enable olmasini bekler")
+    public void kullaniciVisibleAfterBesSecondsButonununEnableOlmasiniBekler() {
+        wait.until(ExpectedConditions.visibilityOf(demoQaPages.visibleAfter));
+    }
+
+    @Then("kullanici Visible After bes seconds butonunun enable oldugunu test eder")
+    public void kullaniciVisibleAfterBesSecondsButonununEnableOldugunuTestEder() {
+        Assert.assertTrue(demoQaPages.visibleAfter.isEnabled());
     }
 }

@@ -16,8 +16,10 @@ public class DemoQaPages {
 
     @FindBy(xpath = "(//*[text()='Click me'])[2]")
     public WebElement clickMeButton;
-
-
+    @FindBy(xpath = "//*[@*='enableAfter']")
+    public WebElement willEnable;
+    @FindBy(xpath = "//*[@*='visibleAfter']")
+    public WebElement visibleAfter;
 
 
 
