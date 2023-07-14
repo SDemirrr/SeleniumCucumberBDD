@@ -15,7 +15,7 @@ import java.io.IOException;
 public class PracticeAmazonStepDefinitions {
     AmazonPracticePage amazonPracticePage=new AmazonPracticePage();
     Actions actions=new Actions(Driver.getDriver());
-    Faker faker=new Faker();
+    //Faker faker=new Faker();
     @When("sign in butonuna tiklar")
     public void signInButonunaTiklar() {
         amazonPracticePage.signinButton.click();
@@ -23,13 +23,14 @@ public class PracticeAmazonStepDefinitions {
 
     @And("faker kullanarak e-posta gonderir")
     public void fakerKullanarakEPostaGonderir() {
-       amazonPracticePage.emailTextBox.sendKeys(faker.internet().emailAddress());
+      // amazonPracticePage.emailTextBox.sendKeys(faker.internet().emailAddress());
+        amazonPracticePage.emailTextBox.sendKeys(Faker.instance().internet().emailAddress());
     }
 
     @And("gonderdigi e-postanin ekran goruntusunu alir")
     public void gonderdigiEPostaninEkranGoruntusunuAlir() {
         try {
-            ReusableMethods.getScreenshotWebElement("emailTextBOxSS",amazonPracticePage.emailTextBox);
+            ReusableMethods.getScreenshotWebElement("FakeEmail",amazonPracticePage.emailTextBox);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -43,7 +44,9 @@ public class PracticeAmazonStepDefinitions {
 
     @Then("There was a problem mesajini goruntuler")
     public void thereWasAProblemMesajiniGoruntuler() {
-        Assert.assertTrue(amazonPracticePage.mesajText.isDisplayed());
+        String expectedText="There was a problem";
+        String actualText=amazonPracticePage.mesajText.getText();
+        Assert.assertEquals("problem mesaji ayni degil",actualText,expectedText);
 
     }
 
@@ -75,6 +78,6 @@ public class PracticeAmazonStepDefinitions {
 
     @And("Create account metnini dogrular")
     public void createAccountMetniniDogrular() {
-        Assert.assertTrue(amazonPracticePage.createAccText.isDisplayed());
+        Assert.assertTrue("Create accaunt test icermiyor",amazonPracticePage.createAccText.isDisplayed());
     }
 }
